@@ -1,0 +1,34 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Listado de Numeros Tefonicos
+{% endblock %}
+
+{% block content %}
+<h3>Número de Telefonos {{ numero_telefonos }}</h3>
+
+<table id="tabla_telefonos">
+
+  <thead>
+    <tr>
+      <th>Telefono</th>
+      <th>Tipo</th>
+      <th>Estudiante</th>
+    </tr>
+  </thead>
+
+  {% for t in telefonos %}
+  <tr>
+    <td> {{t.telefono}} </td>
+    <td> {{t.tipo}} </td>
+    <td> {{t.estudiante}} </td>
+  </tr>
+  {% endfor %}
+</table>
+
+<script type="text/javascript">
+  $(document).ready( function () {
+    $('#tabla_telefonos').DataTable();
+  });
+</script>
+{% endblock %}
