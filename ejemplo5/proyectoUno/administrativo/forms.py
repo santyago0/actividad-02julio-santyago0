@@ -52,6 +52,19 @@ class NumeroTelefonicoForm(ModelForm):
     class Meta:
         model = NumeroTelefonico
         fields = ['telefono', 'tipo', 'estudiante']
+    
+    def clean_telefono(self):
+        valor = self.cleaned_data['telefono']
+        if len(valor) != 10:
+            raise forms.ValidationError("Ingrese telefono con 10 dígitos")
+        return valor
+    
+    def clean_tipo(self):
+        valor = self.cleaned_data['tipo']
+        vocals = ['a', 'e', 'i', 'o', 'u']
+        if valor.lower()[0] in vocals:
+            raise forms.ValidationError("Ingrese tipo que empiece con consonante")
+        return valor
 
 
 class NumeroTelefonicoEstudianteForm(ModelForm):
