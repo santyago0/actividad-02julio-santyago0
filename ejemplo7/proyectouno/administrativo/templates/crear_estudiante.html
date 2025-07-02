@@ -1,17 +1,17 @@
 {% extends "master.html" %}
 
 {% block title %}
-  Crear Estudiante
+    Crear Estudiante
 {% endblock %}
 
 {% block content %}
-<h2>Crear Estudiante</h2>
+    <h2>Crear Estudiante</h2>
 
-<form action="" method="post">
-  {% csrf_token %}
-  {{formulario.as_p}}
-  <p><input type='submit' value='Agregar'/></p>
-</form>
+    <form action="" method="post" class="custom-form contact-form" role="form">
+        {% csrf_token %}
+        {{ formulario.as_p }}
+        <button type="submit" class="form-control">Crear</button>
+    </form>
 
-[<a href="{% url 'index' %}">inicio</a>]
+    [<a href="{% url 'index' %}">inicio</a>]
 {% endblock %}

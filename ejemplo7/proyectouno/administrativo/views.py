@@ -136,4 +136,4 @@ def crear_estudiante(request):
         formulario = EstudianteForm()
     diccionario = {'formulario': formulario}
 
-    return render(request, 'crear_modulo.html', diccionario)
+    return render(request, 'crear_estudiante.html', diccionario)
