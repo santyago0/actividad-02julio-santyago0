@@ -1,10 +1,17 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Listado de Estudiantes
+{% endblock %}
+
+{% block content %}
 <h1>{{mititulo}}</h1>
 <hr>
 <h3>Número de Matriculas {{ numero_matriculas }}</h3>
 <hr>
 [<a href="{% url 'crear_matricula' %}">nuevo</a>]
 <hr>
-<table border="1px">
+<table id="tabla_datos">
   <tr>
     <th><b>Estudiante</b></th>
     <th><b>Módulo</b></th>
@@ -33,3 +40,10 @@
 
 </table>
 <hr>
+
+<script type="text/javascript">
+  $(document).ready( function () {
+    $('#tabla_datos').DataTable();
+  });
+</script>
+{% endblock %}
