@@ -1,0 +1,24 @@
+<h1>{{mititulo}}</h1>
+<hr>
+<h3>Número de Modulos {{ numero_modulos }}</h3>
+<hr>
+[<a href="{% url 'crear_modulo' %}">nuevo</a>]
+<hr>
+<table border="1px">
+  <tr>
+    <th><b>Módulo</b></th>
+    <th><b>Valor en matrículas($)</b></th>
+  </tr>
+  {% for m in modulos %}
+  <tr>
+    <td>
+      {{m.get_nombre_display}} <br>
+    </td>
+    <td>
+      {{m.obtener_valor_matriculas}}
+    </td>
+  </tr>
+  {% endfor %}
+
+</table>
+<hr>

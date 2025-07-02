@@ -1,0 +1,40 @@
+<h1>{{ mititulo }}</h1>
+<hr>
+<h3>Número de Estudiantes {{ numero_estudiantes }}</h3>
+<hr>
+[<a href="{% url 'crear_estudiante' %}">nuevo</a>]
+<hr>
+<table border="1px">
+    <tr>
+        <th><b>Nombre</b></th>
+        <th><b>Apellido</b></th>
+        <th><b>Cedula</b></th>
+        <th><b>Edad</b></th>
+        <th><b>Tipo</b></th>
+        <th><b>Costo de Matriculas</b></th>
+    </tr>
+    {% for e in estudiantes %}
+        <tr>
+            <td>
+                {{ e.nombre }} <br>
+            </td>
+            <td>
+                {{ e.apellido }} <br>
+            </td>
+            <td>
+                {{ e.cedula }} <br>
+            </td>
+            <td>
+                {{ e.edad }} <br>
+            </td>
+            <td>
+                {{ e.get_tipo_estudiante_display }}
+            </td>
+            <td>
+                {{ e.obtener_valor_matriculas }}
+            </td>
+        </tr>
+    {% endfor %}
+
+</table>
+<hr>
