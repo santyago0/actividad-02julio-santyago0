@@ -7,16 +7,16 @@
 {% block content %}
 <h2>Detalle estudiante</h2>
 
-<b>Nombre:</b> {{e.nombre}}
+<h5 class="mt-4 mb-2">Nombre:</h5> <p>{{e.nombre}}</p>
 </br>
-<b>Apellido:</b> {{e.apellido}}
+<h5 class="mt-4 mb-2">Apellido:</h5> <p>{{e.apellido}}</p>
 </br>
-<b>Edad:</b> {{e.edad}}
+<h5 class="mt-4 mb-2">Edad:</h5> <p>{{e.edad}}</p>
 </br>
-<b>Cédula:</b> {{e.cedula}}
+<h5 class="mt-4 mb-2">Cédula:</h5> <p>{{e.cedula}}</p>
 </br>
 <hr>
-<table border="1px">
+<table id="tabla_datos">
   <tr>
     <th><b>Módulo</b></th>
     <th><b>comentario</b></th>
@@ -37,5 +37,13 @@
 </table>
 
 </br>
-[<a href="{% url 'index' %}">inicio</a>]
+<div class="col-lg-4 col-md-6 col-12">
+  <a class="btn custom-btn custom-border-btn ms-3" href="{% url 'index' %}">Inicio</a>
+</div>
+
+<script type="text/javascript">
+  $(document).ready( function () {
+    $('#tabla_datos').DataTable();
+  });
+</script>
 {% endblock %}

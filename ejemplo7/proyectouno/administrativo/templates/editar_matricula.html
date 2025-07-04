@@ -1,17 +1,17 @@
 {% extends "master.html" %}
 
 {% block title %}
-  Crear Matrícula
+  Editar Matrícula
 {% endblock %}
 
 {% block content %}
-<h2>Crear Matricula</h2>
+<h2>Editar Matricula</h2>
 
 <form action="" method="post" class="custom-form">
   {% csrf_token %}
   {{formulario.as_p}}
   <div class="col-lg-4 col-md-6 col-12">
-    <button type="submit" class="form-control">Crear</button>
+    <button type="submit" class="form-control">Actualizar</button>
   </div>
 </form>
 </br>

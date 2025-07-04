@@ -9,9 +9,11 @@
 <hr>
 <h3>Número de Estudiantes {{ numero_estudiantes }}</h3>
 <hr>
-[<a href="{% url 'crear_estudiante' %}">nuevo</a>]
+<div class="col-lg-4 col-md-6 col-12">
+  <a class="custom-btn" href="{% url 'crear_estudiante' %}">Nuevo</a>
+</div>
 <hr>
-<table border="1px">
+<table id="tabla_datos">
     <tr>
         <th><b>Nombre</b></th>
         <th><b>Apellido</b></th>
@@ -45,4 +47,9 @@
 
 </table>
 <hr>
+<script type="text/javascript">
+  $(document).ready( function () {
+    $('#tabla_datos').DataTable();
+  });
+</script>
 {% endblock %}

@@ -9,9 +9,11 @@
 <hr>
 <h3>Número de Modulos {{ numero_modulos }}</h3>
 <hr>
-[<a href="{% url 'crear_modulo' %}">nuevo</a>]
+<div class="col-lg-4 col-md-6 col-12">
+  <a class="custom-btn" href="{% url 'crear_modulo' %}">Nuevo</a>
+</div>
 <hr>
-<table border="1px">
+<table id="tabla_datos">
   <tr>
     <th><b>Módulo</b></th>
     <th><b>Valor en matrículas($)</b></th>
@@ -29,4 +31,9 @@
 
 </table>
 <hr>
+<script type="text/javascript">
+  $(document).ready( function () {
+    $('#tabla_datos').DataTable();
+  });
+</script>
 {% endblock %}
